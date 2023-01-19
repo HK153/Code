@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\STATERS\oneCommit\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2011535866.index
+545332736.index

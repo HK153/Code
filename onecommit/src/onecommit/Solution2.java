@@ -1,0 +1,12 @@
+package onecommit;
+
+//편지
+public class Solution2 {
+	    public int solution(String message) {
+	        int answer = 0;
+	        answer=message.length()*2;
+	            
+	        return answer;
+	    }
+	
+}
