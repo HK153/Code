@@ -2,7 +2,6 @@ package onecommit;
 
 //치킨 쿠폰  
 public class Solution5 {
-	
 	    public static int solution(int chicken) {
 	    	int answer = chicken/10; // 첫 보너스 치킨 개수 
 	    	int result = answer;
