@@ -1,6 +1,6 @@
 package onecommit;
 
-//치킨 쿠폰
+//치킨 쿠폰  
 public class Solution5 {
 	
 	    public static int solution(int chicken) {
