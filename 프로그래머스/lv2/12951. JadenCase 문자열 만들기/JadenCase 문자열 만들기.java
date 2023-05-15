@@ -1,25 +1,25 @@
 class Solution {
     public String solution(String s) {
         String answer = "";
-        String [] word = s.split(" ");
+        String [] word = s.toLowerCase().split("");
+        boolean flag = true;
         
-        for (int i =0; i<word.length; i++){
-            System.out.println(word[i]);
-            word[i] = word[i].toLowerCase();
-            if(word[i].isEmpty()){
-                answer += " ";
+        for (String w : word){
+
+            if(flag==true){
+                answer += w.toUpperCase();
             }
             else{
-                answer += " ";
-                word[i] = Character.toUpperCase(word[i].charAt(0)) + word[i].substring(1);
-                answer += word[i];
+                answer += w;
             }
             
-        }
-        answer = answer.substring(1);
-        if (s.charAt(s.length()-1)==' '){
-            answer += " ";
-        }
+            if (w.equals(" ")){
+                flag = true;
+            }
+            else flag = false;
+            
+            }
+        
         return answer;
     }
 }
