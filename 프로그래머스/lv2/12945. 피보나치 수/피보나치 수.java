@@ -7,7 +7,7 @@ class Solution {
             fibo[0] = 0;
             fibo[1] = 1;
             fibo[i] = (fibo[i-1] % m + fibo[i-2] % m) % m;
-            answer = fibo[i] % m;
+            answer = fibo[i] ;
         }
         
         return (int) answer;
