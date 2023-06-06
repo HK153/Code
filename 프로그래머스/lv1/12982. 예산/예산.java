@@ -5,16 +5,10 @@ class Solution {
         Arrays.sort(d);
         for (int s : d){
             budget -= s;
-            if (budget == 0){
-                answer++;
+            if (budget < 0){
                 break;
             }
-            else if (budget > 0){
-                answer++;
-            }
-            else {
-                break;
-            }
+            answer++;
         }
         return answer;
     }
