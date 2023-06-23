@@ -5,8 +5,6 @@ class Solution {
         int[] answer = new int[score.length];
         int[] ranking = new int[k];
 
-        
-        
         for (int i =0; i<score.length; i++){
             if (i<k){
                 ranking[i] = score[i];
@@ -14,7 +12,6 @@ class Solution {
                 answer[i] = ranking[0];
             }
             else{
-                
                 if (ranking[0]< score[i]){
                     ranking[0] = score[i];
                 }
