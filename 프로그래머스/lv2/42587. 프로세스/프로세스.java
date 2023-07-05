@@ -31,7 +31,7 @@ class Solution {
                 if (maxIndex >= 0) {
                     max = priorities[maxIndex];
                 }
-            } else if (Character.getNumericValue(qlist.peek().charAt(0)) < max) {
+            } else {
                 qlist.add(qlist.peek());
                 qlist.remove();
             }
