@@ -7,19 +7,13 @@ class Solution {
             pq.offer(scoville[i]);
         }
         
-        while(!pq.isEmpty()){
-            if(pq.peek() >= K){
-                break;
-            }
-            else if (pq.peek()< K){
-                if (pq.size()<2){
-                    answer = -1;
-                    break;
-                }
+        while(pq.peek() < K && pq.size() >=2){
                 int n = pq.poll() + pq.poll()*2;
                 pq.offer(n);
                 answer++;
-            }
+        }
+        if (pq.peek() < K && pq.size()<2){
+            answer = -1;
         }
         
         return answer;
