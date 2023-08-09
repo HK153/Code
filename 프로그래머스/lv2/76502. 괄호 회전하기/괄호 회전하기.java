@@ -10,7 +10,7 @@ class Solution {
         }
         for (int j =0; j<s.length(); j++){
             for (Character data : link){
-                if (st.isEmpty() || st.peek() == ')'|| st.peek() == '}'|| st.peek() == ']' ){
+                if (st.isEmpty()){
                    st.push(data); 
                 }
                 else if (st.peek() == '(' && data == ')'){
