@@ -5,4 +5,5 @@ where (FOOD_TYPE, FAVORITES) in
                 (Select FOOD_TYPE ,MAX(FAVORITES)
                   from REST_INFO
                  group by FOOD_TYPE)
+group by FOOD_TYPE
 order by FOOD_TYPE DESC
