@@ -11,14 +11,7 @@ class Solution {
                 break;
             }
         }
-        ans = 0;
-        while(true){
-            ans++;
-            if (ans % n == 0 && ans % m == 0){
-                answer[1] = ans;
-                break;
-            }
-        }
+        answer[1] = n * m / answer[0];
         
         return answer;
     }
