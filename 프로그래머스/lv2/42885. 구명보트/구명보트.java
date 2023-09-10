@@ -16,7 +16,7 @@ class Solution {
             if (!deque.isEmpty() && sum + deque.peekFirst() <= limit){
                 deque.pollFirst();
             }
-            answer+=1;
+            answer += 1;
         }
  
         return answer;
