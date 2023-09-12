@@ -8,13 +8,10 @@ class Solution {
             String arr2Str = Integer.toBinaryString(arr2[i]);
             
             String ans = "";
+
+            arr1Str = String.format("%"+n+"s",arr1Str).replace(' ','0');
+            arr2Str = String.format("%"+n+"s",arr2Str).replace(' ','0');
             
-            while (arr1Str.length() < n) {
-                arr1Str = "0" + arr1Str;
-            }
-            while (arr2Str.length() < n) {
-                arr2Str = "0" + arr2Str;
-            }
             
             for(int j=0; j<n; j++){
  
