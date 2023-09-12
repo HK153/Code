@@ -1,25 +1,24 @@
 class Solution {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
-        String [] arr1Str = new String [n];
-        String [] arr2Str = new String [n];
+
         
         for (int i = 0; i<n; i++){
-            arr1Str[i] = Integer.toBinaryString(arr1[i]);
-            arr2Str[i] = Integer.toBinaryString(arr2[i]);
+            String arr1Str = Integer.toBinaryString(arr1[i]);
+            String arr2Str = Integer.toBinaryString(arr2[i]);
             
             String ans = "";
             
-            while (arr1Str[i].length() < n) {
-                arr1Str[i] = "0" + arr1Str[i];
+            while (arr1Str.length() < n) {
+                arr1Str = "0" + arr1Str;
             }
-            while (arr2Str[i].length() < n) {
-                arr2Str[i] = "0" + arr2Str[i];
+            while (arr2Str.length() < n) {
+                arr2Str = "0" + arr2Str;
             }
             
             for(int j=0; j<n; j++){
  
-                if(arr1Str[i].charAt(j) == '0' && arr2Str[i].charAt(j)== '0'){
+                if(arr1Str.charAt(j) == '0' && arr2Str.charAt(j)== '0'){
                     ans += " ";
                 }
                 else {
