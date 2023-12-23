@@ -8,8 +8,6 @@ public class Main {
         String word2 = in.nextLine().trim();
         
         Map<Character, Integer> frequencyMap = new HashMap<>();
-        
-       
 
         for (char ch : word1.toCharArray()) {
             frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
@@ -19,9 +17,9 @@ public class Main {
             frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) - 1);
         }
         
-         int answer = frequencyMap.values().stream()
-                .mapToInt(Math::abs)
-                .sum();
+        int answer = frequencyMap.values().stream()
+            .mapToInt(Math::abs)
+            .sum();
         
         System.out.println(answer);
     }
