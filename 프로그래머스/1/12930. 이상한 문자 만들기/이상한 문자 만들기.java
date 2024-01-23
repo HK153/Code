@@ -1,29 +1,25 @@
 class Solution {
     public String solution(String s) {
-        String [] word = s.split(" ", -1);
-        StringBuffer sb = new StringBuffer();
-        for (int i =0; i<word.length;i++){
-            String [] latter = word[i].split("");
-            for (int j =0; j<latter.length;j++){
-                if (j%2==0){
-                    latter[j]= latter[j].toUpperCase();
-                }
-                else{
-                    latter[j]= latter[j].toLowerCase();
-                }
-                sb.append(latter[j]);
+        String[] words = s.split(" ", -1);
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            char[] letters = words[i].toCharArray();
+
+            for (int j = 0; j < letters.length; j++) {
+                letters[j] = (j % 2 == 0) ? Character.toUpperCase(letters[j]) : Character.toLowerCase(letters[j]);
+                sb.append(letters[j]);
             }
-            if(word[i].isEmpty()){
-                sb.append(word[i]);
+
+            if (words[i].isEmpty()) {
+                sb.append(words[i]);
             }
-            if (i<word.length-1){
+
+            if (i < words.length - 1) {
                 sb.append(" ");
             }
         }
-      
-        
-        String answer = sb.toString();
-        
-        return answer;
+
+        return sb.toString();
     }
 }
