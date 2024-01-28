@@ -1,28 +1,26 @@
 class Solution {
     public int solution(int[] nums) {
         int answer = 0;
-        boolean isPrime = true;
-        for (int i =0; i<nums.length; i++){
-            for (int j =i+1; j<nums.length; j++){
-                for (int k = j+1; k<nums.length; k++){
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                for (int k = j + 1; k < nums.length; k++) {
                     int sum = nums[i] + nums[j] + nums[k];
-                 
-                    for (int y = 2; y<=sum/2; y++){
-                        if (sum % y == 0){
-                            isPrime = false;
-                            break;
-                        }
-                    }
-                    if (isPrime){
+                    if (isPrime(sum)) {
                         answer++;
-                    }
-                    else{
-                        isPrime = true;
                     }
                 }
             }
         }
 
         return answer;
+    }
+
+    private boolean isPrime(int number) {
+        if (number < 2) return false;
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) return false;
+        }
+        return true;
     }
 }
