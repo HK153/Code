@@ -1,23 +1,21 @@
 class Solution {
     public String solution(String s) {
-        String[] words = s.split(" ", -1);
         StringBuilder sb = new StringBuilder();
+        char[] letters = s.toCharArray(); // 문자열을 한 번에 char 배열로 변환
 
-        for (int i = 0; i < words.length; i++) {
-            char[] letters = words[i].toCharArray();
+        // 단어별로 인덱스를 판별하기 위한 변수
+        int index = 0; 
 
-            for (int j = 0; j < letters.length; j++) {
-                letters[j] = (j % 2 == 0) ? Character.toUpperCase(letters[j]) : Character.toLowerCase(letters[j]);
-                sb.append(letters[j]);
+        for (char letter : letters) {
+            // 공백을 만날 때마다 단어의 인덱스를 초기화
+            if (letter == ' ') {
+                index = 0;
+            } else {
+                // 짝수 인덱스면 대문자로, 홀수 인덱스면 소문자로 변환
+                letter = (index % 2 == 0) ? Character.toUpperCase(letter) : Character.toLowerCase(letter);
+                index++;
             }
-
-            if (words[i].isEmpty()) {
-                sb.append(words[i]);
-            }
-
-            if (i < words.length - 1) {
-                sb.append(" ");
-            }
+            sb.append(letter);
         }
 
         return sb.toString();
