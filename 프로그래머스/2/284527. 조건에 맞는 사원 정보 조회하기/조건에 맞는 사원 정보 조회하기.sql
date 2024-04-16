@@ -1,5 +1,10 @@
 -- 코드를 작성해주세요
-select sum(g.SCORE) as SCORE, e.EMP_NO, e.EMP_NAME, e.POSITION, e.EMAIL
+select 
+    sum(g.SCORE) as SCORE, 
+    e.EMP_NO, 
+    e.EMP_NAME, 
+    e.POSITION, 
+    e.EMAIL
 from HR_GRADE g
 join HR_EMPLOYEES e
 on g.EMP_NO = e.EMP_NO
