@@ -1,5 +1,7 @@
 -- 코드를 작성해주세요
-select e.DEPT_ID , d.DEPT_NAME_EN, 
+select 
+    e.DEPT_ID , 
+    d.DEPT_NAME_EN, 
     ROUND(AVG(e.SAL)) as AVG_SAL
 from HR_DEPARTMENT d
 join HR_EMPLOYEES e
