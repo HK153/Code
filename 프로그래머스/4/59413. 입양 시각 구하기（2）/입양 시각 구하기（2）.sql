@@ -6,7 +6,6 @@ WITH RECURSIVE Hours AS (
     FROM Hours
     WHERE HOUR < 23
 )
-
 SELECT h.HOUR, count(a.ANIMAL_ID) as COUNT
 from Hours h
 left join ANIMAL_OUTS a
