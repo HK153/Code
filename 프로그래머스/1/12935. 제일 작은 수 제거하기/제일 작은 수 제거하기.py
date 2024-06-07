@@ -1,9 +1,7 @@
 def solution(arr):
-    answer = []
-
     if len(arr) == 1:
-        answer.append(-1)
-        return answer
-    else:
-        arr.remove(min(arr))
-        return arr        
+        return [-1]
+    
+    min_value = min(arr)
+    arr.remove(min_value)
+    return arr       
