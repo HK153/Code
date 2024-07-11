@@ -1,21 +1,21 @@
 -- 코드를 입력하세요
-SELECT 
-    USER_ID, 
-    u.NICKNAME, 
-    concat(
-        CITY,
-        ' ', 
-        STREET_ADDRESS1,
-        ' ', 
-        STREET_ADDRESS2
-    ) as '전체주소', 
-    concat(substring(TLNO, 1, 3), '-',
-           substring(TLNO, 4, 4), '-',
-           substring(TLNO, 8, 4)
-          ) as '전화번호'
-from USED_GOODS_BOARD b
-join USED_GOODS_USER u
-on b.WRITER_ID = u.USER_ID
-group by USER_ID 
-having count(*) >= 3
-order by USER_ID DESC;
+SELECT
+    u.USER_ID,
+    u.NICKNAME,
+    u.CITY || ' ' || u.STREET_ADDRESS1 || ' ' || NVL(u.STREET_ADDRESS2, '') AS 전체주소,
+    REGEXP_REPLACE(u.TLNO, '(\d{3})(\d{4})(\d{4})', '\1-\2-\3') AS 전화번호
+FROM
+    USED_GOODS_USER u
+JOIN (
+    SELECT
+        WRITER_ID,
+        COUNT(*) AS POST_COUNT
+    FROM
+        USED_GOODS_BOARD
+    GROUP BY
+        WRITER_ID
+    HAVING
+        COUNT(*) >= 3
+) b ON u.USER_ID = b.WRITER_ID
+ORDER BY
+    u.USER_ID DESC;
