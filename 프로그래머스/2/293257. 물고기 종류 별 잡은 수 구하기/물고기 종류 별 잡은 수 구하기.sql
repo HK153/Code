@@ -1,6 +1,6 @@
 -- 코드를 작성해주세요
 select 
-    count(*) as FISH_COUNT ,
+    count(*) as FISH_COUNT,
     FISH_NAME
 from FISH_INFO i
 join FISH_NAME_INFO n
