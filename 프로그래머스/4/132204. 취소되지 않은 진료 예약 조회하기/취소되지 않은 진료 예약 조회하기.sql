@@ -1,15 +1,13 @@
 -- 코드를 입력하세요
 SELECT 
-    APNT_NO, 
-    PT_NAME, 
-    a.PT_NO, 
-    a.MCDP_CD, 
-    DR_NAME, 
-    APNT_YMD
-from PATIENT p 
-join APPOINTMENT a on a.PT_NO = p.PT_NO 
-join DOCTOR d on a.MDDR_ID = d.DR_ID
-where APNT_CNCL_YMD IS NULL 
-AND APNT_YMD like '2022-04-13%' 
-AND a.MCDP_CD = 'CS'
-order by APNT_YMD
+    a.APNT_NO, p.PT_NAME, a.PT_NO, 
+    a.MCDP_CD, d.DR_NAME, a.APNT_YMD
+FROM   APPOINTMENT a,
+       PATIENT     p,
+       DOCTOR      d
+WHERE  a.MCDP_CD = 'CS'
+AND    a.APNT_CNCL_YN = 'N'
+AND    TO_CHAR(a.APNT_YMD,'YYYY-MM-DD') = '2022-04-13'
+AND    a.PT_NO        = p.PT_NO
+AND    a.MDDR_ID      = d.DR_ID
+ORDER BY APNT_YMD
