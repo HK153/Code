@@ -6,4 +6,4 @@ where b.WRITER_ID = u.USER_ID
 and STATUS = 'DONE'
 group by u.USER_ID, NICKNAME
 having sum(PRICE) >=700000
-order by sum(PRICE)
+order by 3
