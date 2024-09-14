@@ -7,4 +7,4 @@ where
     TLNO is not null 
     and To_char(DATE_OF_BIRTH, 'MM') like '03' 
     and GENDER ='W'
-order by MEMBER_ID;
+order by 1
