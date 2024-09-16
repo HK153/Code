@@ -12,6 +12,4 @@ group by
     EXTRACT(MONTH from SALES_DATE), 
     GENDER
 order by 
-    EXTRACT(YEAR from SALES_DATE), 
-    EXTRACT(MONTH from SALES_DATE), 
-    GENDER
+    YEAR, MONTH, GENDER
