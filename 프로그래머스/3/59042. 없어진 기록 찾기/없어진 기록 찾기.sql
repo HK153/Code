@@ -2,8 +2,10 @@
 SELECT 
     o.ANIMAL_ID, 
     o.NAME
-from ANIMAL_INS i
+from 
+    ANIMAL_INS i 
 right join ANIMAL_OUTS o
 on i.ANIMAL_ID = o.ANIMAL_ID
 where i.ANIMAL_ID is Null
-order by o.ANIMAL_ID
+order by 
+    o.ANIMAL_ID
