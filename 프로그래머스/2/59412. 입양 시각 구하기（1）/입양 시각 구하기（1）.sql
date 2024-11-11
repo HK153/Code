@@ -1,5 +1,7 @@
 -- 코드를 입력하세요
-SELECT TO_NUMBER(TO_CHAR(DATETIME, 'HH24')) as HOUR , count(*)
+SELECT 
+    TO_NUMBER(TO_CHAR(DATETIME, 'HH24')) as HOUR, 
+    count(*)
 from ANIMAL_OUTS
 where TO_NUMBER(TO_CHAR(DATETIME, 'HH24')) between 9 and 20
 group by TO_NUMBER(TO_CHAR(DATETIME, 'HH24'))
