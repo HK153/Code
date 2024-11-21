@@ -1,6 +1,8 @@
 -- 코드를 작성해주세요
 with ranked_ecoli as (
-select ID, SIZE_OF_COLONY,
+select 
+    ID, 
+    SIZE_OF_COLONY,
     NTILE(4) over(order by SIZE_OF_COLONY DESC) as ranking
     from ECOLI_DATA
 )
