@@ -1,11 +1,15 @@
 -- 코드를 작성해주세요
 with Average_Score as (
-select e.EMP_NO, e.EMP_NAME, SAL, AVG(SCORE) as AVG_SCORE
-from HR_EMPLOYEES e
-join HR_GRADE g
-on e.EMP_NO	= g.EMP_NO
-where YEAR = '2022'
-group by e.EMP_NO
+    select 
+        e.EMP_NO, 
+        e.EMP_NAME, 
+        SAL, 
+        AVG(SCORE) as AVG_SCORE
+    from HR_EMPLOYEES e
+    join HR_GRADE g
+    on e.EMP_NO	= g.EMP_NO
+    where YEAR = '2022'
+    group by e.EMP_NO
 )
 select EMP_NO, EMP_NAME,
     CASE
