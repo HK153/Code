@@ -11,4 +11,5 @@ where
     and SEX_UPON_INTAKE like '%Intact%' 
     AND (SEX_UPON_OUTCOME like 'Neutered%'
         or SEX_UPON_OUTCOME like 'Spayed%')
-order by i.ANIMAL_ID
+order by 
+    i.ANIMAL_ID
