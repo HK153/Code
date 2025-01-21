@@ -1,10 +1,14 @@
 -- 코드를 입력하세요
 SELECT 
-    MEMBER_ID, MEMBER_NAME, GENDER, 
-    To_char(DATE_OF_BIRTH,'YYYY-MM-DD') as DATE_OF_BIRTH 
-from MEMBER_PROFILE
+    MEMBER_ID, 
+    MEMBER_NAME, 
+    GENDER, 
+    DATE_FORMAT(DATE_OF_BIRTH,'%Y-%m-%d')as DATE_OF_BIRTH 
+from 
+    MEMBER_PROFILE
 where 
     TLNO is not null 
-    and To_char(DATE_OF_BIRTH, 'MM') like '03' 
+    and DATE_OF_BIRTH like '%-03-%' 
     and GENDER ='W'
-order by 1
+order by 
+    MEMBER_ID
