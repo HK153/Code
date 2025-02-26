@@ -2,6 +2,9 @@
 SELECT 
     TRUNC(PRICE,-4) as PRICE_GROUP, 
     COUNT(*) PRODUCTS 
-from PRODUCT
-Group by TRUNC(PRICE,-4)
-order by PRICE_GROUP
+from 
+    PRODUCT
+Group by 
+    TRUNC(PRICE,-4)
+order by 
+    PRICE_GROUP
