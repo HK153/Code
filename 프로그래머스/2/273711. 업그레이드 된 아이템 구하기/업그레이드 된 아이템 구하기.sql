@@ -1,5 +1,8 @@
 -- 코드를 작성해주세요
-select ii.ITEM_ID, ITEM_NAME, RARITY
+select 
+    ii.ITEM_ID, 
+    ITEM_NAME, 
+    RARITY
 from ITEM_INFO ii
 join ITEM_TREE it
 on ii.ITEM_ID = it.ITEM_ID
