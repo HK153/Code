@@ -3,7 +3,7 @@ SELECT
     o.ANIMAL_ID, 
     o.NAME
 from 
-    ANIMAL_INS i 
+    ANIMAL_INS i
 right join 
     ANIMAL_OUTS o
 on 
