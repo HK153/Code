@@ -4,7 +4,4 @@ def solution(n):
         n, mod = divmod(n, 3)
         a_reversed += str(mod)
     
-    
-    answer = int(a_reversed, 3)
-
-    return answer
+    return int(a_reversed, 3)
