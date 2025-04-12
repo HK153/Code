@@ -1,20 +1,18 @@
 -- 코드를 입력하세요
 SELECT 
-    i.REST_ID, 
-    REST_NAME, 
-    FOOD_TYPE, 
-    FAVORITES, 
+    i.REST_ID, REST_NAME, 
+    FOOD_TYPE, FAVORITES, 
     ADDRESS, 
     ROUND(AVG(REVIEW_SCORE),2) as SCORE
 from 
-    REST_INFO i, 
+    REST_INFO i 
+join 
     REST_REVIEW r
-where 
+on 
     i.REST_ID = r.REST_ID
-    and ADDRESS like '서울%'
+where 
+    ADDRESS like '서울%'
 group by 
-    i.REST_ID, REST_NAME, 
-    FOOD_TYPE, FAVORITES, ADDRESS
-order by 
-    SCORE DESC, 
-    FAVORITES DESC
+    i.REST_ID
+order by
+    SCORE DESC, FAVORITES DESC
