@@ -1,0 +1,13 @@
+class Solution {
+    public long solution(int price, int money, int count) {
+        long totalPrice = 0;
+        for (int i =1 ; i<=count; i++){
+            totalPrice += i*price;
+        }
+        if (totalPrice - money > 0){
+            return totalPrice - money;
+        }
+        else 
+            return 0;
+    }
+}
