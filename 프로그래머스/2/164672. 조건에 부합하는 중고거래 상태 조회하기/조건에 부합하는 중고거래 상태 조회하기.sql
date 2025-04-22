@@ -9,6 +9,9 @@ SELECT
         when 'RESERVED' then '예약중'
         when 'DONE' then '거래완료'
     END as STATUS
-from USED_GOODS_BOARD
-where TO_CHAR(CREATED_DATE, 'YYYY-MM-DD') = '2022-10-05'
-order by BOARD_ID DESC
+from 
+    USED_GOODS_BOARD
+where 
+    TO_CHAR(CREATED_DATE, 'YYYY-MM-DD') = '2022-10-05'
+order by 
+    BOARD_ID DESC
