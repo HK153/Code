@@ -1,6 +1,6 @@
 -- 코드를 입력하세요
 SELECT 
-    USER_ID,
+    USER_ID, 
     PRODUCT_ID
 from 
     ONLINE_SALE 
@@ -9,4 +9,5 @@ group by
 having 
     count(PRODUCT_ID) >= 2
 order by 
-    USER_ID, PRODUCT_ID DESC
+    USER_ID, 
+    PRODUCT_ID DESC
