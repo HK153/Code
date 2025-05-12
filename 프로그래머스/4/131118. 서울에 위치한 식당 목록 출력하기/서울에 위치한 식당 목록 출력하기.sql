@@ -2,8 +2,7 @@
 SELECT 
     i.REST_ID, REST_NAME, 
     FOOD_TYPE, FAVORITES, 
-    ADDRESS, 
-    ROUND(AVG(REVIEW_SCORE),2) as SCORE
+    ADDRESS, ROUND(AVG(REVIEW_SCORE),2) as SCORE
 from 
     REST_INFO i 
 join 
@@ -15,4 +14,5 @@ where
 group by 
     i.REST_ID
 order by
-    SCORE DESC, FAVORITES DESC
+    SCORE DESC, 
+    FAVORITES DESC
