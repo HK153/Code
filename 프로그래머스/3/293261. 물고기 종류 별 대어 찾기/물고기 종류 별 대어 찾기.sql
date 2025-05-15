@@ -10,8 +10,8 @@ join
 on 
     fi.FISH_TYPE = fni.FISH_TYPE
 where 
-    (fi.FISH_TYPE, LENGTH) in 
-    (select 
+    (fi.FISH_TYPE, LENGTH) 
+    in (select 
         FISH_TYPE, 
         MAX(LENGTH) as LENGTH
     from 
