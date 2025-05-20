@@ -1,12 +1,13 @@
 -- 코드를 입력하세요
 SELECT 
-    i.ANIMAL_ID, 
-    i.NAME 
+    i.ANIMAL_ID, i.NAME 
 from 
-    ANIMAL_INS i, 
-    ANIMAL_OUTS o 
-where 
+    ANIMAL_INS as i 
+JOIN 
+    ANIMAL_OUTS as o 
+ON 
     i.ANIMAL_ID = o.ANIMAL_ID
-    and i.DATETIME > o.DATETIME 
+WHERE 
+    i.DATETIME > o.DATETIME 
 ORDER BY 
-    i.DATETIME;
+    i.DATETIME
