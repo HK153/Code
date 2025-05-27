@@ -6,7 +6,8 @@ from
     PRODUCT p, OFFLINE_SALE o
 where 
     p.PRODUCT_ID = o.PRODUCT_ID
-group by PRODUCT_CODE
+group by 
+    PRODUCT_CODE
 order by 
     SALES DESC, 
     PRODUCT_CODE ASC
