@@ -3,10 +3,10 @@ SELECT
     WAREHOUSE_ID, 
     WAREHOUSE_NAME, 
     ADDRESS, 
-    NVL(FREEZER_YN,'N') as FREEZER_YN
+    IFNULL(FREEZER_YN,'N') as FREEZER_YN
 from 
     FOOD_WAREHOUSE
 where 
-    ADDRESS like '경기도%'
+    ADDRESS like "경기도%"
 order by 
     WAREHOUSE_ID
