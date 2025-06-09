@@ -1,5 +1,6 @@
 -- 코드를 작성해주세요
-select COUNT(*) AS COUNT
+select 
+    COUNT(*) AS COUNT
 from ECOLI_DATA
 where 
     (GENOTYPE & 2) = 0
