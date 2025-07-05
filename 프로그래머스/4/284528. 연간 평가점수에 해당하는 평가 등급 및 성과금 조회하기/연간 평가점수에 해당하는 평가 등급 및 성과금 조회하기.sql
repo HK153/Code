@@ -24,5 +24,7 @@ select EMP_NO, EMP_NAME,
         WHEN AVG_SCORE >= 80 THEN SAL * 0.10
         ELSE 0
     END AS BONUS
-from Average_Score
-order by EMP_NO
+from 
+    Average_Score
+order by 
+    EMP_NO
