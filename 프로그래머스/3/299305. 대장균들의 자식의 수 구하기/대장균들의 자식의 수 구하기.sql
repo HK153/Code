@@ -8,7 +8,5 @@ left join
     ECOLI_DATA a
 on 
     o.ID = a.PARENT_ID
-group by 
-    1
-order by 
-    1
+group by o.ID
+order by o.ID
